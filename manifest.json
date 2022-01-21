@@ -1,0 +1,21 @@
+{
+    "name": "Simple browser extension",
+    "version": "1.0",
+    "description": "Detects cookies, and some other stuff.",
+    "permissions": ["activeTab","webRequest","webRequestBlocking","<all_urls>","cookies"],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "panda.jpg"
+    },
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_script.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    }
+}
